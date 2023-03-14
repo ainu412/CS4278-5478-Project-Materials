@@ -7,7 +7,7 @@ import numpy as np
 import gym
 import gym_duckietown
 from gym_duckietown.envs import DuckietownEnv
-
+# haha
 # Benchmark loading time
 st = time.time()
 env = DuckietownEnv(max_steps = 20000, map_name='loop_obstacles')
