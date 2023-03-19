@@ -14,7 +14,7 @@ from gym_duckietown.envs import DuckietownEnv
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--env-name', default=None)
-parser.add_argument('--map-name', default='udem1')
+parser.add_argument('--map-name', default='map1_0')
 parser.add_argument('--no-pause', action='store_true', help="don't pause on failure")
 args = parser.parse_args()
 
@@ -38,8 +38,18 @@ while True:
     distance_to_road_center = lane_pose.dist
     angle_from_straight_in_rads = lane_pose.angle_rad
 
-    ###### Start changing the code here.
+    ######-------> Start changing the code here.
     # TODO: Decide how to calculate the speed and direction.
+    ## input: current tile index, next tile index, and above lane_pose?
+    ## distance_to_road_center, angle_from_straight_in_rads
+    ## output: linear speed (speed) and augular speed (steering)
+
+
+    ## Methods: 1. DL, need self simulation data
+    # 2. RL deep Q-learning, don't need self simulation data
+    # https://colab.research.google.com/drive/1alHbTSZ0uYuC6CTpzJZViMFRxzi8VghY?usp=sharing
+    # https://colab.research.google.com/drive/1TrPWlRkwtBilt4LReKon9cHly80JDmA4?usp=sharing
+    # milestone 1, input high level, output low level
 
     k_p = 10
     k_d = 1
@@ -51,7 +61,10 @@ while True:
     # angle of the steering wheel, which corresponds to the angular velocity in rad/s
     steering = k_p*distance_to_road_center + k_d*angle_from_straight_in_rads # TODO: You should overwrite this value
 
-    ###### No need to edit code below.
+
+
+
+    ######<------- end of code change
     
     obs, reward, done, info = env.step([speed, steering])
     total_reward += reward

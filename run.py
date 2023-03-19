@@ -1,3 +1,7 @@
+"""
+根据文件map4_0_seed2_start_1,13_goal_3,3.txt中指定的每步线速度和角速度，在地图上simulate运行，输出每步的reward
+"""
+
 import argparse
 
 import numpy as np
@@ -32,7 +36,7 @@ parser.add_argument('--map-name', '-m', default="map4_0", type=str)
 parser.add_argument('--seed', '-s', default=2, type=int)
 parser.add_argument('--start-tile', '-st', default="1,13", type=str, help="two numbers separated by a comma")
 parser.add_argument('--goal-tile', '-gt', default="3,3", type=str, help="two numbers separated by a comma")
-parser.add_argument('--control_path', default='./map4_0_seed2_start_1,13_goal_3,3.txt', type=str,
+parser.add_argument('--control_path', default='./map4_0_seed2_start_1,13_goal_3,3_original.txt', type=str,
                     help="the control file to run")
 parser.add_argument('--manual', default=False, type=str2bool, help="whether to manually control the robot")
 args = parser.parse_args()
@@ -111,8 +115,8 @@ else:
         env.render()
 
     # dump the controls using numpy
-    np.savetxt(f'./{args.map_name}_seed{args.seed}_start_{start_pos[0]},{start_pos[1]}_goal_{goal[0]},{goal[1]}.txt',
-               actions, delimiter=',')
+    # np.savetxt(f'./{args.map_name}_seed{args.seed}_start_{start_pos[0]},{start_pos[1]}_goal_{goal[0]},{goal[1]}.txt',
+    #            actions, delimiter=',')
 
 env.close()
 

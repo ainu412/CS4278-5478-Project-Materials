@@ -5,3 +5,5 @@
 
 gym-duckietown/test_dev/
 path_*.yaml
+*.csv
+*.csv

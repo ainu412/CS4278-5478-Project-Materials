@@ -46,7 +46,7 @@ To initialize the gym-duckietown environment, there are 7 arguments:
 
 Generate the control files for submission, similar to what you have done in Lab 1. A sample file for the python
 environment is available [here](./run.py) together
-with [sample control file](./map4_0_seed2_start_1,13_goal_3,3.txt). They illustrate how to add arguments and output your
+with [sample control file](./map4_0_seed2_start_1,13_goal_3,3_original.txt). They illustrate how to add arguments and output your
 controls to a file. To try our simple policy,
 
 ```

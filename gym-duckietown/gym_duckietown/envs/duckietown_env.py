@@ -46,6 +46,7 @@ class DuckietownEnv(Simulator):
         self.limit = limit
 
     def step(self, action):
+
         vel, angle = action
 
         # Distance between the wheels
